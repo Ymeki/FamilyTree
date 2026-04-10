@@ -1,20 +1,24 @@
 {
-  "name": "genealogy-frontend",
-  "version": "0.0.1",
-  "private": true,
+  "name": "lightweight-family-tree",
+  "version": "1.0.0",
+  "description": "A lightweight family tree system built with FastAPI and Vue 3.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "serve": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.4.0",
-    "vue-router": "^4.3.0",
-    "pinia": "^2.1.0",
-    "axios": "^1.6.0"
+    "vue": "^3.2.0",
+    "pinia": "^2.0.0",
+    "axios": "^0.21.1",
+    "vue-router": "^4.0.0",
+    "element-plus": "^2.0.0",
+    "naive-ui": "^2.0.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.0",
-    "vite": "^5.2.0"
-  }
+    "vite": "^2.0.0",
+    "typescript": "^4.0.0",
+    "vue-tsc": "^0.0.0"
+  },
+  "license": "MIT"
 }

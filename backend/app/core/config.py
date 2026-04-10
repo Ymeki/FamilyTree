@@ -1,14 +1,19 @@
-from pydantic_settings import BaseSettings
+# FILE: /FamilyTree/FamilyTree/backend/app/core/config.py
 
+import os
+from dotenv import load_dotenv
 
-class Settings(BaseSettings):
-    DATABASE_URL: str = "sqlite+aiosqlite:///./genealogy.db"
-    SECRET_KEY: str = "dev-secret-key-change-in-production"
-    ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
+load_dotenv()
 
-    class Config:
-        env_file = ".env"
+class Config:
+    APP_NAME = os.getenv("APP_NAME", "Lightweight Family Tree")
+    DEBUG = os.getenv("DEBUG", "False") == "True"
+    DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./test.db")
+    SECRET_KEY = os.getenv("SECRET_KEY", "your_secret_key")
+    ALGORITHM = os.getenv("ALGORITHM", "HS256")
+    ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 30))
 
-
-settings = Settings()
+# Usage:
+# To access the configuration, you can import Config from this module and use it like:
+# from app.core.config import Config
+# print(Config.APP_NAME)
